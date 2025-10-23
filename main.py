@@ -6,51 +6,6 @@ import frontmatter
 import re
 
 
-# text = "This is some text {remove this part} and this should stay."
-# # Use re.sub to remove the curly-braced text
-# cleaned_text = re.sub(r'\{[^}]*\}', '', text)
-#
-# This is some text  and this should stay.
-
-# text = """# This is a level 1 header
-# ## This is a level 2 header
-# ### This is a level 3 header
-# Some other text
-# ## Another level 2 header"""
-# 
-# # Find lines that start with exactly two #
-# lines_with_two_hashes = re.findall(r'^##[^#].*', text, re.M)
-# 
-# print(lines_with_two_hashes)
-#
-# ['## This is a level 2 header', '## Another level 2 header']
-
-
-# def has_duplicates(lst):
-#     return len(lst) != len(set(lst))
-# 
-# # Example usage
-# numbers = [1, 2, 3, 2, 5]
-# print(has_duplicates(numbers))  # Output: True   
-
-# def find_duplicates_with_counts(lst):
-#     count_dict = {}
-#     for item in lst:
-#         count_dict[item] = count_dict.get(item, 0) + 1
-#     return {item: count for item, count in count_dict.items() if count > 1}
-# 
-# # Example usage
-# items = ['apple', 'banana', 'apple', 'cherry', 'banana', 'banana']
-# print(find_duplicates_with_counts(items))  # Output: {'apple': 2, 'banana': 3}  
-
-# text = "Hello, World! 123 @#$%"
-# # Remove all non-alphanumeric characters but leave spaces
-# cleaned_text = re.sub(r'[^a-zA-Z0-9 ]', '', text) 
-
-# text = "This   is    a    sentence    with   extra   spaces."
-# # Replace all consecutive whitespace characters with a single space
-# cleaned_text = re.sub(r'\s+', ' ', text)
-
 # Get all the level 2 headers into a list
 # Remove # and {...} and non-alpha-numeric characters
 # Trim leading and trailing whitespace and convert double spaces to single spaces
