@@ -1,0 +1,246 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="assets/portal.ico">
+  <title>Local HTTP Server -- Homelab | Hylown</title>
+  <link rel="stylesheet" href="assets/css/hylowncom.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+<body>
+
+  <header class="header top-bar">
+    <div class="wrapper no-pad">
+      <ul class="navigation">
+        <li class="hamburger-icon"><a href="javascript:void(0)" onclick="toggleNav()"><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span></a></li>
+        <li style="padding:0;"><a style="padding:0;margin:0 10;" href="https://hylown.com"><img src="assets/portal.png" width="31px" height="31px"></a></li>
+        <li><a href="homelab.html">Homelab</a></li>
+        <li><a href="apps.html">Apps</a></li>
+        <li><a href="consulting.html">Consulting</a></li>
+        <li><a style="font-size:1.5em;" href=""><i class="bi bi-linkedin"></i></a></li>
+        <li><a style="font-size:1.5em;" href=""><i class="bi bi-github"></i></a></li>
+        <li><a href="buy_us_a_coffee.html">Support Us</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="container">
+    <main class="main">
+        <div class="main__inner grid">
+            <div class="sidebar sidebar--primary" id="sidebar--primary">
+                <div class="sidebar__scrollwrap">
+                    <div class="sidebar__inner sidebar__inner-left">
+                      <div>
+                        <label>Homelab</label>
+                        <a href="javascript:void(0)" class="closebtn" id="closebtn" onclick="toggleNav()" style="display:none;">&times;</a>
+                      </div>
+                      <ul class="side-nav">
+                        <li><a id="Home" href="homelab.html">Home</a></li>
+                        <li><a id="SSH" href="ssh.html">SSH</a></li>
+                        <li><a id="RaspberryPi" href="raspberry_pi.html">Raspberry Pi</a>
+                          <ul class="side-nav side-nav-2">
+                            <li><a id="RaspberryPi-Initialize" href="raspberry_pi_initialize.html">Initialize</a></li>
+                            <li><a id="RaspberryPi-PCIE" href="raspberry_pi_pcie.html">PCIe Boot NVMe</a></li>
+                            <li><a id="Extras" href="raspberry_pi_extras.html">Extras</a></li>
+                          </ul>
+                        </li>
+                        <li><a id="LocalHTTPServer" href="local_http_server.html">Local HTTP Server</a></li>
+                        <li><a id="LocalGitServer" href="local_git_server.html">Local Git Server</a></li>
+                        <li><a id="RemoteGitServer" href="remote_git_server.html">Remote Git Server</a></li>
+                      </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar sidebar--secondary" style="top:48px;">
+                <div class="sidebar__scrollwrap">
+                    <div class="sidebar__inner">
+                      <div>
+                        <label>On this page</label>
+                      </div>
+                      <ul class="side-nav template__nav" id="right-nav">
+                        <li><a href="">back to top</a></li>
+                        <li class="template__nav-item"><a href="#installation">Installation</a></li>
+<li class="template__nav-item"><a href="#nginx-config">NGINX Config</a></li>
+                      </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+              <article>
+                <a class="source-button" href="" title="Edit this page"><svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg></a>
+                <a class="source-button" href="local_http_server.md" title="View source of this page"><svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"></path></svg></a>
+                <br>
+                <h1 id="setup-a-home-http-server">Setup a Home HTTP Server</h1>
+<h3 class="subtitle" id="start-your-own-intranet"><em>Start your own intranet</em></h3>
+<h2 class="template__section" id="installation">Installation</h2>
+<p>If apache is installed then either stop it</p>
+<pre><code class="language-bash">$ sudo systemctl stop apache2
+</code></pre>
+<p>or remove it.</p>
+<pre><code class="language-bash">$ sudo apt purge apache2
+</code></pre>
+<p>Update the machine:</p>
+<pre><code class="language-bash">$ sudo apt update &amp;&amp; sudo apt full-upgrade
+</code></pre>
+<p>Install necessary packages:</p>
+<pre><code class="language-bash">$ sudo apt-get install nginx git gitweb nano fcgiwrap apache2-utils php8.2-fpm -y
+</code></pre>
+<p>Note: we&rsquo;re including git &amp; gitweb here because this machine will also be a Git server.  </p>
+<p>After installing NGINX you should be able to view its welcome page by entering either <code>&lt;hostname&gt;.local</code> or <code>&lt;ip-address&gt;</code> in the address bar of a web browser on another machine on the network.  </p>
+<p>We&rsquo;re actually going to be setting up multiple intranet websites in addition to the Git server.  So let&rsquo;s change this homepage.</p>
+<p>Make a copy of the original NGINX file.  This is optional, but good practice.  </p>
+<pre><code class="language-bash">$ cd /var/www/html
+$ cp index.nginx-debian.html index.nginx-debian.html.original
+</code></pre>
+<p>Then open the file</p>
+<pre><code class="language-bash">$ sudo nano index.nginx-debian.html
+</code></pre>
+<p>and make its contents the following:</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt; Git Server&lt;/title&gt;
+&lt;style&gt;
+html { color-scheme: light dark; }
+body { width: 35em; margin: 0 auto;
+font-family: Tahoma, Verdana, Arial, sans-serif; }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Welcome to Our Git Server Homepage!&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;http://&lt;hostname&gt;.local/gitweb&quot;&gt;Gitweb&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://&lt;hostname&gt;.local/newrepo&quot;&gt;Make a new repo&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Thank you for supporting me in this project!&lt;/em&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>where <code>&lt;hostname&gt;</code> is the hostname of the server.  </p>
+<h2 class="template__section" id="nginx-config">NGINX Config</h2>
+<p>I used:</p>
+<pre><code>&lt;repo-root&gt; = /mnt/raid5/git
+&lt;gitweb-root&gt; = /usr/share/gitweb/  which I believe is the default for Gitweb. 
+&lt;hostname&gt; = the hostname of your server
+</code></pre>
+<p>Make a backup copy of the original NGINX config file:</p>
+<pre><code class="language-bash">$ cd /etc/nginx/sites-available
+$ cp default default.original
+</code></pre>
+<p>Configure NGINX by editing the following file</p>
+<pre><code class="language-bash">$ sudo nano /etc/nginx/sites-available/default
+</code></pre>
+<p>and making its contents the following:</p>
+<pre><code class="language-bash">server {
+    listen 80;
+    server_name &lt;hostname&gt;.local;
+
+    location ~ ^/git(/.*) {
+#        auth_basic &quot;Restricted&quot;;
+#        auth_basic_user_file &quot;&lt;repo-root&gt;/htpasswd&quot;;
+        fastcgi_pass unix:/var/run/fcgiwrap.socket;
+        include fastcgi_params;
+        fastcgi_param SCRIPT_FILENAME /usr/lib/git-core/git-http-backend;
+        fastcgi_param GIT_HTTP_EXPORT_ALL &quot;&quot;;
+        fastcgi_param GIT_PROJECT_ROOT &lt;repo-root&gt;;
+        fastcgi_param PATH_INFO $1;
+    }
+
+    location /newrepo {
+        root &lt;gitweb-root&gt;;
+        index index.php;
+    }
+
+    location ~ \.php$ {
+        root &lt;gitweb-root&gt;;
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass unix:/run/php/php8.2-fpm.sock;
+    }
+
+     # deny access to Apache .htaccess on Nginx with PHP, 
+     # if Apache and Nginx document roots concur
+    location ~ /git/\.ht {
+        deny all;
+    }
+
+    location /index.cgi {
+        root &lt;gitweb-root&gt;;
+        include fastcgi_params;
+        gzip off;
+        fastcgi_param SCRIPT_NAME $uri;
+        fastcgi_param GITWEB_CONFIG /etc/gitweb.conf;
+        fastcgi_pass  unix:/var/run/fcgiwrap.socket;
+    }
+# need to add symbolic link to the static dir
+# sudo ln -s &lt;gitweb-root&gt;/static /var/www/html/static
+
+
+    location /gitweb {
+        return 301 /index.cgi;
+    }
+
+    location / {
+        root /var/www/html;
+        index index.html index.htm index.php index.cgi index.nginx-debian.html;
+    }
+
+}
+</code></pre>
+<p>Run the NGINX test command &hellip;</p>
+<pre><code class="language-bash">$ sudo nginx -t
+</code></pre>
+<p>&hellip; and you should see something like this</p>
+<pre><code class="language-console">nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+</code></pre>
+<p>If you do see errors, go back into the configuration file above and make sure each of the things being pointed to exist in the correct locations.  </p>
+<p>Here&rsquo;s a list of all the directories and files used:</p>
+<pre><code class="language-bash">/var/run/fcgiwrap.socket
+/etc/nginx/fastcgi_params
+/usr/lib/git-core/git-http-backend
+/etc/nginx/snippets/fastcgi-php.conf
+/run/php/php8.2-fpm.sock
+/etc/gitweb.conf
+</code></pre>
+<p>If you wish to require username and password for HTTP access, then uncomment the two <code>auth_basic</code> lines in the NGINX config, create a user </p>
+<pre><code class="language-bash">$ sudo adduser gitusera
+</code></pre>
+<p>and put a password in the proper location:</p>
+<pre><code class="language-bash">
+$ sudo htpasswd -c &lt;repo-root&gt;/.htpasswd gitusera
+
+</code></pre>
+<p>and I hit enter for no password.</p>
+<p>Restart NGINX:</p>
+<pre><code class="language-bash">$ sudo systemctl restart nginx
+</code></pre>
+<p>You should now be able to go to <code>&lt;hostname&gt;.local/gitweb</code> in a web browser on any other machine on the network and view the gitweb homepage.</p>
+                <p class="outro">To suggest an edit or correction to this page, please click the "Edit this page" button below or at the top to access the source file on GitHub.</p>
+                <br>
+                <div class="source-button-bottom">
+                  <div class="source-button-bottom-inner">
+                    <a id="a" class="source-button" href="local_http_server.md" title="View source of this page"><svg xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"></path></svg></a>
+                    <label id="b">View</label>
+                  </div>
+                  <div class="source-button-bottom-inner">
+                    <a id="c" class="source-button" href="" title="Edit this page"><svg xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg></a>
+                    <label id="d">Edit</label>
+                  </div>
+                </div>
+              </article>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+      <!--<div><p>All content copyright Hylown</p></div>-->
+      <div><a href="tou.html">Terms of Use</a></div>
+      <div><a href="https://hylown.com"><img src="assets/portal.png" width="100px" height="100px"></a></div>
+      <div><a href="">back to top</a></div>
+    </footer>
+  </div>
+  <script>
+    document.getElementById('LocalHTTPServer').classList.add('active')
+  </script>
+  <script src="assets/javascript/hylowncom.js"></script>
+</body>
+</html>
