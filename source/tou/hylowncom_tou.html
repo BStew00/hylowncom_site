@@ -1,0 +1,72 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="{root}assets/portal.ico">
+  <title>{title}</title>
+  <link rel="stylesheet" href="{root}assets/css/hylowncom.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+<body>
+
+  <header class="header top-bar">
+    <div class="wrapper no-pad">
+      <ul class="navigation">
+        <li class="hamburger-icon"><a href="javascript:void(0)" onclick="toggleNav()"><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span></a></li>
+        <li style="padding:0;"><a style="padding:0;margin:0 10;" href="https://hylown.com"><img src="{root}assets/portal.png" width="31px" height="31px"></a></li>
+        <li><a href="{root}homelab/">Homelab</a></li>
+        <li><a href="{root}apps/">Apps</a></li>
+<!--
+        <li><a href="{root}consulting/">Consulting</a></li>
+        <li><a style="font-size:1.5em;" href=""><i class="bi bi-linkedin"></i></a></li>
+-->
+        <li><a style="font-size:1.5em;" href="https://github.com/BStew00/hylowncom_site"><i class="bi bi-github"></i></a></li>
+<!--
+        <li><a href="{root}/donate/">Support Us</a></li>
+-->
+      </ul>
+    </div>
+  </header>
+
+  <div class="container">
+    <main class="main">
+        <div class="main__inner grid">
+            <div class="sidebar sidebar--primary" id="sidebar--primary">
+                <div class="sidebar__scrollwrap">
+                    <div class="sidebar__inner sidebar__inner-left">
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar sidebar--secondary" style="top:48px;">
+                <div class="sidebar__scrollwrap">
+                    <div class="sidebar__inner">
+                      <div>
+                        <label>On this page</label>
+                      </div>
+                      <ul class="side-nav template__nav" id="right-nav">
+                        <li><a href="">back to top</a></li>
+                        {toc}
+                      </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+              <article>
+                {body}
+              </article>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+      <!--<div><p>All content copyright Hylown</p></div>-->
+      <div><a href="{root}tou/">Terms of Use</a></div>
+      <div><a href="https://hylown.com"><img src="{root}assets/portal.png" width="100px" height="100px"></a></div>
+      <div><a href="">back to top</a></div>
+    </footer>
+  </div>
+  <script>
+    document.getElementById('{activate}').classList.add('active')
+  </script>
+  <script src="{root}assets/javascript/hylowncom.js"></script>
+</body>
+</html>
