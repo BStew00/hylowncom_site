@@ -73,8 +73,6 @@ def make_html(md: str, f:Path) -> str:
         active = yaml['id_to_make_active']
     if "source" in yaml:
         sourceval = str(yaml["source"])
-        print(sourceval)
-        print(type(sourceval))
         if sourceval.lower() == "true":
                 x = re.sub("source", "", str(f))
                 x = re.sub(r"\\", "/", x)
@@ -88,8 +86,11 @@ def make_html(md: str, f:Path) -> str:
     with open(os.path.join(prefix, yaml['html_template']), 'r', encoding="utf-8") as htmltemplatefp:
         html_template = htmltemplatefp.read()
     pagetoc = make_toc(md)
+    if "page_type" in yaml:
+        type = str(yaml["page_type"])
+        if type.lower() == "homepage":
+          return html_template
     mdbody = markdown.markdown(md, extensions=["smarty", "abbr", "attr_list", "fenced_code", "toc", "admonition", "tables"])
-#    print(mdbody)
     if "{root}" in mdbody:
         mdbody = mdbody.format(root=rootbk)
     return html_template.format(
