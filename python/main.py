@@ -76,7 +76,7 @@ def make_html(md: str, f:Path) -> str:
         if sourceval.lower() == "true":
                 x = re.sub("source", "", str(f))
                 x = re.sub(r"\\", "/", x)
-                github_source_prefix = "https://raw.githubusercontent.com/BStew00/hylowncom_site/main"
+                github_source_prefix = "https://raw.githubusercontent.com/BStew00/hylowncom_site/main/source"
                 github_source = github_source_prefix + x
                 print("source added: " + github_source)
         else:
