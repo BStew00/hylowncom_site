@@ -1,0 +1,584 @@
+/***************************************
+    Layout
+***************************************/
+
+* {
+    box-sizing: border-box;
+    margin:0;
+}
+
+html {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+    width: 100%;
+    background-color: var(--body-bg);
+    font: 16px / 1.7 normal normal;
+    font-family: "Helvetica Neue", Helvetica, arial, freesans, clean, sans-serif;
+}
+
+.header {
+    display: block;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color: var(--header-bg);
+    color: var(--header);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.main {
+    flex-grow: 1;
+}
+
+.main__inner {
+    display: flex;
+    height: 100%;
+    margin-top: 0;
+}
+
+.grid {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1440px;
+}
+
+.sidebar {
+    position: sticky;
+    align-self: flex-start;
+    flex-shrink: 0;
+    padding: 1.2rem 0;
+    top: 2.4rem;
+    width: 12.1rem;
+}
+
+.sidebar__scrollwrap {
+    margin: 0 .2rem;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    height: 100vh;
+}
+
+@supports selector(::-webkit-scrollbar) {
+    [dir=ltr] .sidebar__inner {
+        padding-right: calc(100% - 11.5rem);
+    }
+}
+
+.sidebar--secondary {
+    display: block;
+    order: 2;
+}
+
+.content {
+    flex-grow: 1;
+    min-width: 0;
+}
+
+.footer {
+    display:flex;
+    justify-content: space-around;
+    height:150px;
+    background-color: var(--footer-bg);
+    margin-top: auto;
+    border-top: 2px solid #1a191a;
+}
+.footer * {
+    align-self: center;
+    
+}
+.footer div {
+    text-align:center;
+    width:200px;
+}
+.footer a {
+    color: var(--footer-a);
+}
+.footer a:hover {
+    color: var(--footer-a-hover);
+}
+.footer img:hover {
+  -webkit-filter: grayscale(50%);
+  filter: grayscale(50%);
+}
+
+
+
+
+
+/***************************************
+    Other elements
+***************************************/
+
+a {
+    color: var(--a);
+    text-decoration: none;
+    font-weight: 500;
+}
+a:hover {
+    color: var(--a-hover);
+}
+
+abbr {
+    text-decoration: none;
+}
+
+.source-button {
+    float:right;
+}
+
+.source-button-bottom {
+    display: flex;
+    justify-content: center;
+}
+
+.source-button-bottom-inner {
+    display: flex;
+    flex-direction: column;
+}
+.source-button-bottom-inner label {
+    text-align: center;
+    color: var(--side-nav-a);
+}
+
+.source-button svg {
+  fill: var(--side-nav-a);
+}
+.source-button svg:hover {
+  fill: var(--side-nav-a-hover);
+}
+#a:hover + #b, 
+#c:hover + #d {
+    color: var(--side-nav-a-hover);
+}
+
+
+
+
+.side-nav {
+    display:block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0 10px;
+    padding-left: .6rem;
+    padding-inline-start: 40px;
+    unicode-bidi: isolate;
+    line-height: 1.3;
+}
+.side-nav-2 {
+    padding-left: .4rem;
+    font-size: 14px;
+}
+.side-nav li {
+    padding: 5px 0;
+}
+.side-nav a {
+    color: var(--side-nav-a);
+    cursor: pointer;
+}
+.side-nav a:hover {
+    color: var(--side-nav-a-hover);
+}
+
+#closebtn {
+  font-size: 36px;
+  color: var(--header);
+}
+#closebtn:hover {
+    color: var(--side-nav-a-hover);
+}
+
+.sidebar__inner div {
+    display:flex;
+}
+.sidebar__inner label {
+    color: var(--sidebar__inner-label);
+    align-self: center;
+    padding-left:40px;
+}
+.header img:hover {
+  -webkit-filter: grayscale(50%);
+  filter: grayscale(50%);
+}
+
+.side-nav .active {
+    color: var(--side-nav-active);
+}
+
+.outro {
+    background-color: var(--outro-bg);
+    padding: 20px 40px;
+    border-radius: 20px;
+    margin-top: 84px;
+    font-weight:300;
+    font-size:20px;
+}
+
+
+
+
+table {
+    color: var(--primary-color);
+}
+
+td {
+    padding-bottom: 10px;
+}
+
+#header-active{
+    color :var(--header-active);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/****************************************
+    Header
+****************************************/
+
+.top-bar {
+    background-color: var(--header-bg);
+    color: var(--header);
+    font-size: 14px;
+    height: 43px;
+    padding: 5px 0;
+    text-align: left;
+}
+
+.top-bar .navigation {
+    display: inline-block;
+}
+
+.top-bar a {
+    color: var(--header);
+}
+
+.top-bar a:hover {
+    color: var(--side-nav-a-hover);
+    text-decoration: none;
+}
+
+.wrapper.no-pad {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: 1440px;
+    text-align:center;
+}
+
+.wrapper {
+    margin: 0 auto;
+    overflow: hidden;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.top-bar .navigation {
+    display: inline-block;
+}
+
+.navigation {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation li {
+    display: inline-block;
+    height: 33px;
+    padding-right: 5px;
+    vertical-align: top;
+}
+
+.navigation a {
+    display: inline-block;
+    padding: 5px;
+    transition: color .2s;
+}
+
+.navigation a:hover {
+    text-decoration: none;
+}
+
+.hamburger-icon {
+    margin: 0;
+    padding: 0px 0px;
+}
+.hamburger-icon span {
+    width: 21px;
+    background-color:var(--header);
+    height: 3px;
+    display: block;
+    margin-bottom: 4px;
+}
+.hamburger-icon:hover span {
+    background-color: var(--side-nav-a-hover);
+}
+.hamburger-icon span:last-child {
+    margin-bottom:0px;
+}
+
+
+
+
+
+
+
+
+/***************************************
+    Styling
+***************************************/
+article {
+    overflow-x:auto;
+    padding:0 40px 80px 40px;
+}
+
+h1 {
+    display: block;
+    font-size: 2.4em;
+    color:var(--primary-color);
+    font-weight: 200;
+    letter-spacing: .05em;
+    margin: 0 0 .5em;
+    text-align: center;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.subtitle {
+    display: block;
+    font-size: 1.8em;
+    color: var(--subtitle);
+    font-weight: 180;
+    letter-spacing: .075em;
+    margin: -2em 0 1.5em;
+    text-align: center;
+    unicode-bidi: isolate;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+h2 {
+    color:var(--primary-color);
+    font-size: 2em;
+    font-weight: 200;
+    letter-spacing: .05em;
+    margin: 0;
+    padding-top: 40px;
+    margin-bottom: 50px;
+    box-sizing: border-box;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+
+h3 {
+    color:var(--primary-color);
+    font-size: 1.5em;
+    font-weight: 150;
+    letter-spacing: .05em;
+    margin: 0;
+    padding-top: 40px;
+    margin-bottom: 30px;
+    box-sizing: border-box;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+p {
+    margin:0;
+    padding:20px 0;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    color: var(--primary-color);
+    font: 16px / 1.5 normal normal;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 400;
+}
+
+code {
+    background-color: var(--code-bg);
+    color: var(--code);
+    font-weight: 500;
+    padding: 0 .2em;
+    font-size:1.1em;
+}
+
+pre code {
+  display: block;
+  background-color: var(--pre-code-bg);
+  border: 1px solid #999;
+  padding: 20px;
+  white-space: pre;
+  overflow-x: auto;
+  max-width: 100%;
+  font-family: monospace;
+}
+
+img {
+  padding: inherit;
+  margin:auto;
+  display: block;
+}
+
+ul {
+    color: var(--primary-color);
+}
+
+
+
+
+
+
+
+/****************************************
+    Responsive
+****************************************/
+.column-container {
+    display:flex;
+    flex-direction:row;
+}
+.column {
+    border:2px solid blue;
+    width:100%;
+    padding: 10px;
+}
+
+@media (min-width:1024px) {
+    .navigation .hamburger-icon {
+        display: none;
+    }
+}
+
+@media (width < 1024px) {
+    .sidebar--primary {
+        display:none;
+    }
+    .sidebar__inner-left div {
+        justify-content: space-around;
+        background-color: var(--footer-bg);
+    }
+    .sidebar__inner-left label {
+        padding-left:0;
+    }
+    .sidebar--primary {
+        border:2px solid var(--sidebar__inner-label);
+    }
+}
+
+@media (width < 768px) {
+    .sidebar--secondary {
+        display:none;
+    }
+    .top-bar {
+        height:auto;
+    }
+    article {
+        padding:0 20px 80px 20px;
+    }
+    .column-container {
+        flex-direction: column;
+    }
+}
+
+.left-sidebar-show {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 250px;
+  padding-top:0;
+  background-color: var(--body-bg);
+  z-index: 999;
+}
+
+
+.admonition {
+    background-color: var(--admonition-bg);
+    border-width: .075rem;
+    border-style: solid;
+    border-color: var(--admonition-border);
+    border-radius: 20px;
+    display: flow-root;
+    margin: 40px 0;
+    padding: 0 .6rem;
+    page-break-inside: avoid;
+}
+
+.admonition p {
+    padding:5px 0;
+    font-size: 1.1rem;
+}
+
+.admonition.info {
+    border-color: var(--admonition-info);
+}
+
+.info>.admonition-title {
+    background-color: var(--admonition-title-info-bg);
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-left-width: .2rem;
+    padding-left: 2rem;
+    padding-right: .6rem;
+    border: none;
+    font-weight: 600;
+    font-size:24px;
+    margin: 0 -.6rem;
+    padding-bottom: .4rem;
+    padding-top: .4rem;
+    position: relative;
+    color: var(--admonition-title-info);
+}
+
+
+.light-button {
+   background-color: var(--primary-bg-color);
+   border: none;
+   float: right;
+   fill: var(--side-nav-a);
+   stroke: var(--side-nav-a);
+} 
+.light-button svg:hover {
+    display:inline-block;
+    cursor: pointer;
+    fill: var(--side-nav-a-hover);
+    stroke: var(--side-nav-a-hover);
+}

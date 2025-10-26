@@ -1,0 +1,53 @@
+.hero .data-love {
+    text-align:center;
+}
+
+.hero {
+    padding-top: 100px;
+    background-image: radial-gradient(ellipse closest-side at 50% 50%, #3a3f45, #37383c 25%, #343233);
+    background-size: 100% 750px;
+    background-position: center -300px;
+    padding-bottom: 30rem;
+    margin-bottom: -30rem;
+    background-size: 100% 1000px;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+
+main {
+    margin-bottom: 250px;
+}
+
+.hero p a {
+    font-size: 1.5em;
+    color: #efdab9;
+}
+.hero p a:hover {
+    color: #ebac00;
+}
+
+.hero h1 {
+    margin:0;
+}
+
+.hero-span {
+    color:#78b0a0;
+}
+
+.hero p {
+    margin:0;
+    padding:0 0 10px 0;
+}
+
+.under-hero {
+    margin-top:500px;
+}
+
+.home-admonition p {
+    font-size:2em;
+}
+
+.home-admonition strong {
+   color:#78b0a0;
+   font-size:2.2em;   
+}

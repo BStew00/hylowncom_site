@@ -7,7 +7,7 @@ source: true
 
 # Setting up a Raspberry Pi
 
-![]({root}assets/RPi_Imager.png){: width=420 height=314.8}
+![]({root}assets/RPi_Imager.png){: width=615 height=443}
 
 
 ## Use RP Imager {: class="template__section" }

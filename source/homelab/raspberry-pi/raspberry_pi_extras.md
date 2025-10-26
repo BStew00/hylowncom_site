@@ -7,6 +7,10 @@ source: true
 
 ## Remote Desktop {: class="template__section" }
 
+
+![]({root}assets/remote_desktop.png){: width=768 height=432}
+
+
 We use RealVNC.
 
 Raspberry Pi OS has wayvnc running by default; need to stop it:
@@ -135,7 +139,7 @@ In the file ```~/.vscode/argv.json``` uncomment the line
 "disable-hardware-acceleration": true,
 ```
 
-and save.  If this line is not there for some reason, add it to the end of the file before the closing ```}```, and make sure the line above it (i.e. the old last line) now ends in a comma ```,```.
+and save.  If this line is not there for some reason, add it to the end of the file before the closing curly brace, and make sure the line above it (i.e. the old last line) now ends in a comma ```,```.
 
 If VScode was open/running, close it, restart it, and it should work good now.
 

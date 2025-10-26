@@ -1,0 +1,26 @@
+:root {
+  --body-bg: #000;
+  --header-bg: #584b4f;
+  --header: #efeae1;
+  --header-active: #efdab9;
+  --footer-bg: #2c2a2b;
+  --a: #986f00;
+  --a-hover: #ffd152;
+  --footer-a: var(--a);
+  --footer-a-hover: var(--a-hover);
+  --side-nav-a: var(--sidebar__inner-label); 
+  --side-nav-a-hover: #334e37;
+  --sidebar__inner-label: #bdbdbd;
+  --side-nav-active: var(--a);
+  --outro-bg: #1d1f29;
+  --primary-color: var(--sidebar__inner-label); 
+  --subtitle: var(--sidebar__inner-label);
+  --code-bg: #393939;
+  --code: rgb(101, 156, 200);  
+  --pre-code-bg: #202020;
+  --admonition-border: gray;
+  --admonition-bg: var(--outro-bg);
+  --admonition-info: var(--side-nav-a);
+  --admonition-title-info-bg: var(--outro-bg);
+  --admonition-title-info: var(--sidebar__inner-label);
+}

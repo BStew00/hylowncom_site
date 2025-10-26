@@ -8,6 +8,10 @@ source: true
 # SSH
 ### *It's actually quite easy!* {: class="subtitle" }
 
+
+![]({root}assets/ssh.png){: .className #id width=821.25 height=281.25}
+
+
 [SSH](https://en.wikipedia.org/wiki/Secure_Shell) is a very common encrypted and authenticated transport protocol from a ```client``` to a ```server```.
 
 *[SSH]: Secure Shell Protocol 
@@ -25,7 +29,7 @@ You can see a log of SSH activity by using the following command on a server
 $ journalctl -u ssh
 ```
 
-If you're on Windows, download and install Git, then you can run these commands using the ![](assets/Git_Bash.png){: style="display:inline;padding:0;"} Git Bash command line utility that comes with a Git installation on Windows.
+If you're on Windows, download and install Git, then you can run these commands using the ![]({root}assets/Git_Bash.png){: style="display:inline;padding:0;"} Git Bash command line utility that comes with a Git installation on Windows.
 
 
 

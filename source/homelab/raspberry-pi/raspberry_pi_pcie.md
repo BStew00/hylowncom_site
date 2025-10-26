@@ -7,6 +7,10 @@ source: true
 
 # Setting up a Raspberry Pi to boot from PCIe
 
+
+![]({root}assets/radxa.png){: width=743 height=604}
+
+
 ## Enable PCIe {: class="template__section" }
 
 If using the official Raspberry Pi PCIe-to-M.2 Hat+, it should be automatically detected. 

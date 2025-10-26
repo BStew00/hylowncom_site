@@ -10,7 +10,7 @@ source: true
 <div style="display:flex;flex-direction:row;">
 <i class="bi bi-cone-striped" style="font-size:100px;color:orange;"></i>  
 
-<p style="font-size:16px;color:#efdab9">
+<p style="font-size:24px">
 This part of our website is still under development.  But check back soon, we plan to have some cool stuff here!!  
 </p>
 </div>

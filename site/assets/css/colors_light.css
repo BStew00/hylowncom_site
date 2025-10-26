@@ -1,0 +1,26 @@
+:root {
+  --body-bg: #fff;
+  --header-bg: #584b4f;
+  --header: #efeae1;
+  --header-active: #efdab9;
+  --footer-bg: #2c2a2b;
+  --a: #ebac00;
+  --a-hover: #9e7503;
+  --footer-a: var(--a);
+  --footer-a-hover: var(--a-hover);
+  --side-nav-a: #953d58;
+  --side-nav-a-hover: rgb(21, 146, 42);
+  --sidebar__inner-label: #3a0404;
+  --side-nav-active: var(--side-nav-a-hover);
+  --outro-bg: #f3f5fd;
+  --primary-color: #000; 
+  --subtitle: #000;
+  --code-bg: #e6efef;
+  --code: #273b34;  
+  --pre-code-bg: #e6efef;
+  --admonition-border: var(--side-nav-a-hover);
+  --admonition-bg: var(--outro-bg);
+  --admonition-info: var(--side-nav-a-hover);
+  --admonition-title-info-bg: var(--outro-bg);
+  --admonition-title-info: var(--side-nav-a-hover);
+}

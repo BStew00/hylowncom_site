@@ -9,6 +9,10 @@ source: true
 
 ### *A personal, private Git server on a secure, remote machine* {: class="subtitle" }
 
+
+![]({root}assets/git_server.jpg){: width=612 height=262}
+
+
 ## Features {: class="template__section" }
 
 * Encrypted read & write to/from the server via SSH

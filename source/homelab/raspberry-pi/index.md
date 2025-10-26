@@ -1,13 +1,17 @@
 ---
 title: Raspberry Pi -- Homelab | Hylown
 html_template: homelab/raspberry-pi/hylowncom_homelab_raspberry_pi.html
-id_to_make_active: RaspberryPi
+id_to_make_active: RP
 source: true
 ---
 
 # Raspberry Pi
 
 ### _Everybody's favorite DIY Homelab platform_ {: class=subtitle}
+
+
+![]({root}assets/raspberry_pi.png){: width=700 height=466}
+
 
 This is going to be awesome. You're going to love it.  We're going to do some cool things with some [Raspberry Pi 5's](https://www.raspberrypi.com/products/raspberry-pi-5/).  
 

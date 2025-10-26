@@ -9,6 +9,9 @@ source: true
 
 ### *Start your own intranet* {: class="subtitle" }
 
+
+![](../../assets/home_network.png){: width=326 height=326}
+
 ## Installation {: class="template__section" }
 
 If apache is installed then either stop it

@@ -11,12 +11,6 @@ import shutil
 
 
 
-# # List all files in directory "dir"
-# def file_list(dir):
-#     return [f for f in os.listdir(dir) if os.path.isfile(os.path.join(dir, f))]
-
-
-
 # Get all the level 2 headers into a list
 # Remove # and {...} and non-alpha-numeric characters
 # Trim leading and trailing whitespace and convert double spaces to single spaces
@@ -61,11 +55,8 @@ def make_toc(md: str) -> str:
 def make_html(md: str, f:Path) -> str:
     prefix = os.path.join(os.getcwd(), 'source')
     rootbk = "zero"
-    slash = "/"
-    if os.name == 'nt':
-        slash = "\\" #windows
-    if str(f).count(slash)>1:
-        rootbk = "../"*(str(f).count(slash)-1*(f.stem.lower()=="index"))
+    if str(f).count("\\")>1:
+        rootbk = "../"*(str(f).count("\\")-1*(f.stem.lower()=="index"))
     tit = ''
     active = ''
     github_source = ''
@@ -127,13 +118,6 @@ else:
     print("Building the site in existing directory 'site'")
 
 
-#print(dir_list("source"))
-#print(file_list("source"))
-#print(file_list("source/homelab"))
-#print(os.listdir('source'))
-#flst = file_list("source")
-
-
 
 # Create the directories
 sourcefp = os.path.join(os.getcwd(), "source")
@@ -163,11 +147,6 @@ for f in mdlst:
     # Write the HTML files
     writefp = Path(re.sub("source", "site", str(f), count=1))
     writefp = writefp.with_suffix(".html")
-#    print(str(writefp.stem).lower() != "index")
-#    print(not os.path.isdir(os.path.splitext(writefp)[0]))
-#    print(os.path.splitext(writefp)[0])
-#    print(os.path.join(os.path.splitext(writefp)[0], "index.html"))
-#    print(writefp.stem)
     if str(writefp.stem).lower() != "index":
         if not os.path.isdir(os.path.splitext(writefp)[0]):
             os.mkdir(os.path.splitext(writefp)[0])
@@ -175,4 +154,4 @@ for f in mdlst:
     with open(writefp, "w", encoding="utf-8") as htmlfp:
       htmlfp.write(html)
     print("Created: " + str(writefp))
-    #print()
+

@@ -8,6 +8,10 @@ source: true
 # Setup a Home Git Server
 ### *Your own personal, private Git server in your home!* {: class="subtitle" }
 
+
+![](../../assets/git_server.jpg){: width=612 height=262}
+
+
 ## Features {: class="template__section" }
 
 A local, private, free git server.
