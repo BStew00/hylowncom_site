@@ -55,8 +55,11 @@ def make_toc(md: str) -> str:
 def make_html(md: str, f:Path) -> str:
     prefix = os.path.join(os.getcwd(), 'source')
     rootbk = "zero"
-    if str(f).count("\\")>1:
-        rootbk = "../"*(str(f).count("\\")-1*(f.stem.lower()=="index"))
+    slash = "/"
+    if os.name == 'nt':
+        slash = "\\" #windows
+    if str(f).count(slash)>1:
+        rootbk = "../"*(str(f).count(slash)-1*(f.stem.lower()=="index"))
     tit = ''
     active = ''
     github_source = ''
