@@ -38,16 +38,23 @@ main {
     margin:0;
     padding:0 0 10px 0;
 }
+.hero strong {
+    font-size: 1.2em;
+    color:#78b0a0;
+}
 
 .under-hero {
-    margin-top:500px;
+    margin-top:100px;
 }
 
 .home-admonition p {
-    font-size:2em;
+    font-size:1.2em;
+    text-align: center;
 }
-
+.home-admonition h1 {
+    font-size: 2em;
+}
 .home-admonition strong {
    color:#78b0a0;
-   font-size:2.2em;   
+   font-size:1.2em;   
 }

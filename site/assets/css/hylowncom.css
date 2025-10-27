@@ -243,9 +243,33 @@ td {
 
 
 
+  .ethereal_hero {
+    margin-bottom:40px;
+    padding:0;
+    border-radius: 50%;
+    box-shadow: 0 0 125px #3a3f45,
+                0 0 100px #37383c,
+                0 0  85px #343233,
+                0 0  25px darkblue,
+                0 0  35px blue,
+                0 0  45px lightblue,
+                0 0  55px #939396,
+                0 0  65px #505151,
+                0 0  75px #7b7b7c;
+    ;
+  }
+  .ethereal_flow {
+    display:flex;
+    justify-content: center;
+  }
+  .ethereal_flow svg {
+    padding:0 10px;
+    fill:white;
+}
 
 
 
+  
 
 
 
