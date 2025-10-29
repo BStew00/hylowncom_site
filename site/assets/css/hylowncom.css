@@ -592,6 +592,18 @@ ul {
     color: var(--admonition-title-info);
 }
 
+.admonition-title-centered-link {
+    color: var(--admonition-title-info);
+    text-decoration: underline;
+}
+.admonition p:has(.admonition-title-centered-link) {
+    padding: .4rem 0 0 0;
+    text-align: center;
+    font-weight: 600;
+    font-size:24px;
+    margin: 0 -.6rem;
+}
+
 
 .light-button {
    background-color: var(--primary-bg-color);

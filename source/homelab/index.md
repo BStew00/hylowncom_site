@@ -11,33 +11,43 @@ source: True
 ## List of Guides {: class="template__section" }
 
 
-!!! info "SSH"
+!!! info ""
+    [SSH](ssh/){: class="admonition-title-centered-link"}
+
     A simple walk-through guide of the Secure Shell Protocol, SSH.
 
     We explain the URIs -- a common stumbling point for beginners -- and explain how it works. Enough details to get you going, without having to go through volumes of specification documents.
 
 
-!!! info "Raspberry Pi"
+!!! info ""
+    [Raspberry Pi](raspberry-pi/){: class="admonition-title-centered-link"}
+
     A popular, low-cost computer hardware platform with a really nifty linux OS.
 
     Step-by-step instructions for an initial setup, and more advanced features including setting up SSH, a remote desktop connection, RAID, booting from an SSD rather than a microSD card, and tips on covering some of the nuance involved with using a Pi with VScode and Python.
 
 
 
-!!! info "Local HTTP Server"
+!!! info ""
+    [Local HTTP Server](local_http_server/){: class="admonition-title-centered-link"}
+
     Use a computer in your home to serve HTTP webpages on your local network.
 
     Having overtaken apache, NGINX is a server software used on a third of websites today.  You can use it to setup all sorts of apps for your home -- let your imagination run wild. We set it up with Git in mind.  
 
 
 
-!!! info "Local Git Server"
+!!! info ""
+    [Local Git Server](local_git_server/){: class="admonition-title-centered-link"}
+
     A private Git server right in your home!
 
     Too daunting? Nah, you can do it. You can use your private Git server in conjunction with remote servers, such as GitHub, but with more peace-of-mind in being able to keep local copies tidied up nicely.  Also a great place to store  pre-development projects.
 
 
-!!! info "Remote Git Server"
+!!! info ""
+    [Remote Git Server](remote_git_server/){: class="admonition-title-centered-link"}
+
     If you got a private Git server at home, how about a remote one, too?
 
     Not much different than setting up on a machine in your home, but with some subtle differences.  We use our web host for this purpose.  If you have access to an off-site machine, this is a fantastic way to go.  Remote storage is an integral part of the 3-2-1 backup strategy.
