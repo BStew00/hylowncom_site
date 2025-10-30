@@ -12,7 +12,7 @@ source: True
 
 
 !!! info ""
-    [Beginners Tutorial](BeginnerTut/){: class="admonition-title-centered-link"}
+    [Beginners Tutorial](beginnertut/){: class="admonition-title-centered-link"}
 
     Install and setup Django and use it to create a basic website that has a web app.
 

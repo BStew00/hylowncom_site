@@ -525,11 +525,29 @@ For `Username` enter `admin`.  For `Email address:` hit Enter to leave blank.  E
 
 ## Give your app some data {: class="template__section" }  
 
-Go to [http://127.0.0.1:8000/admin/login/?next=/admin/](http://127.0.0.1:8000/admin/login/?next=/admin/), enter the username `admin` and password you just gave above.  
+Go to [http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin), enter the username `admin` and password you just gave above.  
 
-Click `+ Add` next to `Questions`.  In the text box next to `Question text:` write `What's new?`.  Beside `Date:` click `Today`, and beside `Time:` click `Now`.  Click `Save and add another`.  Repeat this process for the question `What's up?`, except click `Save` at the end.  
+
+![](../../assets/django_admin_login.png){: width=700 height=416.6}
+
+
+Click `+ Add` next to `Questions`.  
+
+
+![](../../assets/django_admin_home.png){: width=700 height=267.7}
+
+
+In the text box next to `Question text:` write `What's new?`.  Beside `Date:` click `Today`, and beside `Time:` click `Now`.  Click `Save and add another`.  Repeat this process for the question `What's up?`, except click `Save` at the end.  
+
+
+![](../../assets/django_admin_question.png){: width=700 height=318.7}
+
 
 Now go to [http://127.0.0.1:8000/app_name/](http://127.0.0.1:8000/app_name/) and you should see a list with both questions.  
+
+
+![](../../assets/django_app_detail.png)
+
 
 Now run the following to add answers to the questions:  
 
@@ -555,13 +573,16 @@ Out[6]: <Choice: The sky>
 In [7]: exit
 ```
 
-Now go to [http://127.0.0.1:8000/app_name/](http://127.0.0.1:8000/app_name/), click one of the questions, select an answer, and see that the vote count has been updated.  
+Now go to [http://127.0.0.1:8000/app_name/](http://127.0.0.1:8000/app_name/), click one of the questions, select an answer, click vote, and see that the vote count has been updated.  
 
 
 ![](../../assets/django_app_results.png)
 
 
 Also, go back to the question list, click one of the questions and click `vote` without selecting an answer; you should see the error message "You didn't select a choice." that was hard-coded in, above.  
+
+
+![](../../assets/django_app_error_message.png)
 
 
 
