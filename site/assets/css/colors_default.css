@@ -23,4 +23,8 @@
   --admonition-info: var(--side-nav-a-hover);
   --admonition-title-info-bg: var(--outro-bg);
   --admonition-title-info: var(--side-nav-a-hover);
+  --ethereal-flow-svg: var(--primary-color);
+  --ethereal-flow-python-fill: var(--primary-color);
+  --ethereal-flow-python-stroke: var(--body-bg);
+  --ethereal-flow-container: var(--primary-color);
 }

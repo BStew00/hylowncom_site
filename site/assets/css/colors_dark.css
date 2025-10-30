@@ -1,5 +1,5 @@
 :root {
-  --body-bg: #000;
+  --body-bg: #181818;
   --header-bg: #584b4f;
   --header: #efeae1;
   --header-active: #efdab9;
@@ -20,7 +20,11 @@
   --pre-code-bg: #202020;
   --admonition-border: gray;
   --admonition-bg: var(--outro-bg);
-  --admonition-info: var(--side-nav-a);
+  --admonition-info: #81c08b;
   --admonition-title-info-bg: var(--outro-bg);
-  --admonition-title-info: var(--sidebar__inner-label);
+  --admonition-title-info: #81c08b;
+  --ethereal-flow-svg: var(--primary-color);
+  --ethereal-flow-python-fill: var(--primary-color);
+  --ethereal-flow-python-stroke: var(--body-bg);
+  --ethereal-flow-container: var(--primary-color);
 }

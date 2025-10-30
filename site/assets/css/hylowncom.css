@@ -244,7 +244,7 @@ td {
 
 
   .ethereal_hero {
-    margin-bottom:40px;
+    margin:60px auto;
     padding:0;
     border-radius: 50%;
     box-shadow: 0 0 125px #3a3f45,
@@ -264,9 +264,18 @@ td {
   }
   .ethereal_flow svg {
     padding:0 10px;
-    fill:white;
+    fill:var(--ethereal-flow-svg);
 }
-
+#ethereal-flow-python {
+    fill:var(--ethereal-flow-python-fill);
+    stroke:var(--ethereal-flow-python-stroke);
+}
+#ethereal-flow-container-title {
+    border-bottom-color: var(--ethereal-flow-container);
+}
+#ethereal-flow-container {
+    border-color: var(--ethereal-flow-container);
+}
 
 
   
